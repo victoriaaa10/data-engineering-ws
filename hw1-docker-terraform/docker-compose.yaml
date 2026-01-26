@@ -1,25 +1,29 @@
 services:
   db:
-    image: postgres:17
+    container_name: postgres
+    image: postgres:17-alpine
     environment:
-      POSTGRES_USER: "admin"
-      POSTGRES_PASSWORD: "pg123"
-      POSTGRES_DB: "ny_taxi"
-    volumes:
-      - "ny_taxi_postgres_data:/var/lib/postgresql/data"
+      POSTGRES_USER: 'admin'
+      POSTGRES_PASSWORD: 'password123'
+      POSTGRES_DB: 'ny_taxi'
     ports:
-      - "5432:5432"
+      - '5433:5432'
+    volumes:
+      - ny_taxi_db_storage:/var/lib/postgresql/data
 
   pgadmin:
-    image: dpage/pgadmin4
+    container_name: pgadmin
+    image: dpage/pgadmin4:latest
     environment:
-      PGADMIN_DEFAULT_EMAIL: "admin@admin.com"
-      PGADMIN_DEFAULT_PASSWORD: "root"
-    volumes:
-      - "pgadmin_data:/var/lib/pgadmin"
+      PGADMIN_DEFAULT_EMAIL: 'pg@admin.com'
+      PGADMIN_DEFAULT_PASSWORD: "pgadmin"
     ports:
-      - "8085:80"
+      - "8080:80"
+    volumes:
+      - ny_taxi_pgadmin_storage:/var/lib/pgadmin
 
 volumes:
-  ny_taxi_postgres_data:
-  pgadmin_data:
+  ny_taxi_db_storage:
+    name: ny_taxi_db_storage
+  ny_taxi_pgadmin_storage:
+    name: ny_taxi_pgadmin_storage
