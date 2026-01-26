@@ -1,3 +1,5 @@
 .venv/
 __pycache__/
 .terraform/
+data/
+notebooks/.ipynb_checkpoints/
