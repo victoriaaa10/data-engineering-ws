@@ -2,10 +2,10 @@
 This repository contains my projects, homework, and laboratory exercises for the Data Engineering Zoomcamp. The goal is to master the data engineering lifecycle—from infrastructure provisioning to workflow orchestration.
 
 ## 🛠 Tech Stack
-* **Package Manager:** uv (Fast Python dependency management)
+* **Package Manager:** uv 
 * **Infrastructure:** Terraform
-* **Containerization:** Docker & Docker Compose
-* **Workflow:** Python (Modular src/ layout)
+* **Containerization:** Docker 
+* **Workflow:** 
 * **Cloud:** Google Cloud Platform (GCP)
 ---
 ## 🤝 Acknowledgements
